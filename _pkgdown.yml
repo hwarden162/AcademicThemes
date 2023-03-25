@@ -1,0 +1,5 @@
+url: hwarden162.github.io/AcademicThemes
+template:
+  bootstrap: 5
+  bootswatch: lumen
+

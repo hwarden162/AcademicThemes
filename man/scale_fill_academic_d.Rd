@@ -18,6 +18,7 @@ A layer that can be added to a ggplot2 object.
 Scale Plot Fills With Academic Themes (Discrete)
 }
 \examples{
+library(ggplot2)
 ggplot(
   data.frame(
     x = LETTERS[1:5],
