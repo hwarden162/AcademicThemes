@@ -1,0 +1,93 @@
+---
+title: "AcademicThemes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{AcademicThemes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Accessing Colour Palettes
+
+`AcademicThemes` is a package for recolouring `ggplot2` plots to use colours from different academic institutions. These palettes are accessed through the `academic_colour_palette()` function. If no arguments are specified then a list of all the colour palettes are returned.
+
+```{r setup}
+library(AcademicThemes)
+
+palettes <- academic_colour_palette()
+head(palettes)
+```
+
+If you want to access just one colour palette you can give the name of the colour palette as an argument. Here is an example for accessing the colours of the Cancer Research UK logo.
+
+```{r}
+library(scales)
+
+cruk_palette <- academic_colour_palette("cruk")
+cruk_palette
+
+show_col(cruk_palette)
+```
+
+To access the names of the palettes you can use the `academic_colour_palette_names()` function or they are all listed with examples of the colours in the Colour Palettes article of this site.
+
+By default this will return just the colours in the palette, but if you would like to use the palette to create a palette with a different number of colours you can supply this as an argument.
+
+```{r}
+cruk_palette_9 <- academic_colour_palette("cruk", n = 9)
+cruk_palette_9
+
+show_col(cruk_palette_9)
+```
+
+## Recolouring `ggplot2` Plots
+
+These palettes can be used to automatically recolour `ggplot2` plots similar to packages such as `viridis`. Here is an example of a plot 
+
+```{r}
+library(tidyverse)
+
+tibble(
+  x = LETTERS[1:5],
+  y = 5:1
+) %>%
+  ggplot() +
+  aes(x = x, y = y, fill = x) +
+  geom_col() +
+  guides(fill = "none") +
+  labs(
+    x = "Groups",
+    y = "Value"
+  ) +
+  theme_bw()
+```
+
+One of the colour palettes can be used to recolour this plot using the `scale_fill_academic_d()` function.
+
+```{r}
+tibble(
+  x = LETTERS[1:5],
+  y = 5:1
+) %>%
+  ggplot() +
+  aes(x = x, y = y, fill = x) +
+  geom_col() +
+  guides(fill = "none") +
+  labs(
+    x = "Groups",
+    y = "Value"
+  ) +
+  theme_bw() +
+  scale_fill_academic_d("cruk")
+```
+
+Any function called `scale_colour_*` will change the colour of the plot and any function called `scale_fill_*` will change the fill of the plot. If the variable you are mapping to the aesthetic is continuous you use the function that ends `*_c` and if it is discrete you use the function that ends `*_d`.
+
+
