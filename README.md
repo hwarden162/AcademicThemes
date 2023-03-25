@@ -4,6 +4,9 @@
 # AcademicThemes
 
 <!-- badges: start -->
+
+[![Codecov test
+coverage](https://codecov.io/gh/hwarden162/AcademicThemes/branch/main/graph/badge.svg)](https://app.codecov.io/gh/hwarden162/AcademicThemes?branch=main)
 <!-- badges: end -->
 
 The goal of `AcademicThemes` is to provide functionality to allow users
