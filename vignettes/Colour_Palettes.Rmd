@@ -1,0 +1,26 @@
+---
+title: "Colour Palettes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Colour Palettes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo = FALSE, message = FALSE}
+library(AcademicThemes)
+
+for (palette in academic_colour_palette_names()) {
+  colour_palette <- academic_colour_palette(palette)
+  image(1:length(colour_palette), 1, matrix(1:length(colour_palette)),
+        main = paste0("Colour Palette: ", palette), xlab = "", ylab = "",
+        col = colour_palette, xaxt = "n", yaxt = "n", bty = "n")
+}
+```
