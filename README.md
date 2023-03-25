@@ -5,9 +5,9 @@
 
 <!-- badges: start -->
 
+[![check-full](https://github.com/hwarden162/AcademicThemes/actions/workflows/check-full.yaml/badge.svg)](https://github.com/hwarden162/AcademicThemes/actions/workflows/check-full.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/hwarden162/AcademicThemes/branch/main/graph/badge.svg)](https://app.codecov.io/gh/hwarden162/AcademicThemes?branch=main)
-[![check-full](https://github.com/hwarden162/AcademicThemes/actions/workflows/check-full.yaml/badge.svg)](https://github.com/hwarden162/AcademicThemes/actions/workflows/check-full.yaml)
 <!-- badges: end -->
 
 The goal of `AcademicThemes` is to provide functionality to allow users
