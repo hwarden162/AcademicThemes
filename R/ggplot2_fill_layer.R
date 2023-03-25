@@ -39,6 +39,7 @@ scale_fill_academic_c <- function(palette_name, ...) {
 #' @export
 #'
 #' @examples
+#' library(ggplot2)
 #' ggplot(
 #'   data.frame(
 #'     x = LETTERS[1:5],
