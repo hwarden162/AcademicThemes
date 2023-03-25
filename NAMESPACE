@@ -2,3 +2,7 @@
 
 export(academic_colour_palette)
 export(academic_colour_palette_names)
+export(scale_colour_academic_c)
+export(scale_colour_academic_d)
+export(scale_fill_academic_c)
+export(scale_fill_academic_d)

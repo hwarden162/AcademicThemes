@@ -1,7 +1,10 @@
 test_that("academic_colour_palette is validated", {
+  expect_warning(academic_colour_palette(n = 2))
   expect_error(academic_colour_palette(c("a", "c")))
   expect_error(academic_colour_palette(2))
   expect_error(academic_colour_palette("not_a_palette"))
+  expect_error(academic_colour_palette("ukri", n = "Hello"))
+  expect_error(academic_colour_palette("ukri", n = 2.6))
 })
 
 test_that("all palettes are returned", {
@@ -14,6 +17,12 @@ test_that("all palettes are returned", {
     expect_true(is.vector(palette))
     expect_true(is.character(palette))
     expect_true(all(grepl(hex_pattern, palette)))
+  }
+
+  for (palette in names(palettes)) {
+    rand_n <- sample(1:20, 1)
+    interpolated_palette <- academic_colour_palette(palette, n = rand_n)
+    expect_equal(length(interpolated_palette), rand_n)
   }
 })
 

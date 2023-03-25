@@ -4,11 +4,15 @@
 \alias{academic_colour_palette}
 \title{Get An Academic Colour Palette}
 \usage{
-academic_colour_palette(palette = NA)
+academic_colour_palette(palette = NA, n = NA)
 }
 \arguments{
 \item{palette}{A string containing the name of the palette to be returned. If
 no name is given then all palettes are returned instead.}
+
+\item{n}{A number indicating how many different colours should be included in
+the palette. If not specified only the specific colours in the palette
+will be returned.}
 }
 \value{
 A single vector or a list of vectors containing HEX codes for academic

@@ -5,6 +5,9 @@
 #'
 #' @param palette A string containing the name of the palette to be returned. If
 #'     no name is given then all palettes are returned instead.
+#' @param n A number indicating how many different colours should be included in
+#'     the palette. If not specified only the specific colours in the palette
+#'     will be returned.
 #'
 #' @return A single vector or a list of vectors containing HEX codes for academic
 #'     colour palettes.
@@ -13,7 +16,7 @@
 #' @examples
 #' # Get the colour palette used by the UKRI
 #' academic_colour_palette("ukri")
-academic_colour_palette <- function(palette = NA) {
+academic_colour_palette <- function(palette = NA, n = NA) {
   # Generate the colour palettes
   # ================================================================
   # ========================= CONTRIBUTORS =========================
@@ -35,6 +38,9 @@ academic_colour_palette <- function(palette = NA) {
 
   # If no colour palette is selected then return them all
   if (any(is.na(palette))) {
+    if (!is.na(n)) {
+      warning("\n Argument `n` was ignored as no colour palette was specified")
+    }
     return(palettes)
   }
 
@@ -52,7 +58,20 @@ academic_colour_palette <- function(palette = NA) {
   }
 
   # Return the selected colour palette
-  return(palettes[[palette]])
+  if (!is.na(n)) {
+    # Check that n is numeric
+    if (!is.numeric(n)) {
+      stop("\n \u2716 `n` should be numeric")
+    }
+    # Check that n is an integer
+    if (round(n) != n) {
+      stop("\n \u2716 `n` should be an integer")
+    }
+
+    grDevices::colorRampPalette(palettes[[palette]])(n)
+  } else {
+    return(palettes[[palette]])
+  }
 }
 
 #' Get The Academic Colour Palette Names
