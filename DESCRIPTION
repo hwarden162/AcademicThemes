@@ -2,8 +2,10 @@ Package: AcademicThemes
 Title: Colour Plots With Palettes From Academic Institutions
 Version: 0.0.1
 Authors@R: 
-    person("Hugh", "Warden", , "hugh.warden@outlook.com", role = c("aut", "cre"),
+    c(
+      person("Hugh", "Warden", , "hugh.warden@outlook.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-4308-7316"))
+    )
 Description: Functionality to allow users to easily colour plots with the colour
     palettes of various academic institutions.
 License: MIT + file LICENSE

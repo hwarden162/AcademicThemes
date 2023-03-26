@@ -74,7 +74,58 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="academicthemes">AcademicThemes<a class="anchor" aria-label="anchor" href="#academicthemes"></a>
 </h1></div>
-<p><code>AcademicThemes</code> is a package that provides functionality to allow users to easily colour plots with the colour palettes of various academic institutions.</p>
+<p><code>AcademicThemes</code> is a package that provides functionality to allow users to easily colour plots with the colour palettes of various academic institutions. Here are two examples of plots that have been recoloured using colours from the UKRI logo and the Cancer Research UK logo.</p>
+<p><img src="./reference/figures/logo_plots.png"></p>
+<p>This package was made to aesthetically make these plots align with the logo (and by extension colour theme) of different academic institutions. <strong>They were not made to be colour blind friendly.</strong> Please be mindful of people who are colour blind when making your plots and make sure that all of your figures are as accessible as possible.</p>
+<div class="section level2">
+<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
+</h2>
+<p>Contributions are always welcome. If you would like to add functionality to <code>AcademicThemes</code> please do make a PR request or raise an issue. If you would like to add a colour palette then you can raise an issue on GitHub or you can add it yourself. To add a colour palette, fork the <code>AcademicThemes</code> GitHub repository, open <code>R/colour_palettes.R</code> and scroll down to the <code>academic_colour_palette</code> function. The colour palettes are stored at the top of the function in a list</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">palettes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>To add your own colour palette just add a new entry on this list and everything else will be done for you. However, the new entry must follow a certain form. Here is an example of an entry for the Center for Genomic and Experimental Medicine (CGEM):</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cgem_igc</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#0e2e5a"</span>, <span class="st">"#b62641"</span><span class="op">)</span></span></code></pre></div>
+<p><code>cgem_igc</code> is the name of the palette. This institute is normally shortened to CGEM but there are many other institutions that could be shortened to the same thing. Therefore, <code>igc</code> was put on the end of the name as it is also a part of the Institute of Genetics and Cancer. This makes <code>cgem_igc</code> a much more descriptive and unique palette name.</p>
+<p><code>c("#0e2e5a", "#b62641")</code> is a description of the palette itself. These are the two colours of the CGEM logo stored in HEX.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org" class="external-link">scales</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://scales.r-lib.org/reference/show_col.html" class="external-link">show_col</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#0e2e5a"</span>, <span class="st">"#b62641"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="index_files/figure-gfm/unnamed-chunk-3-1.png"><!-- --></p>
+<p>HEX codes are stored as a string starting with a hashtag (<code>#</code>) and followed by six characters that are either numbers 0-9 or letters A-F. If you don’t write the colours in valid HEX then your addition will fail when the package is tested and this will result in the palette not being added to the package. In addition, the palette should be added in alphabetical order by name to the colour palette list.</p>
+<p>If you do the above and submit a pull request then your palette will be added to <code>AcademicThemes</code>, but there are a couple of other things you can do to make this process easier. After you have added the new palette you can check that it works by running</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">load_all</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/academic_colour_palette.html">academic_colour_palette</a></span><span class="op">(</span><span class="st">"&lt;NEW_PALETTE_NAME&gt;"</span><span class="op">)</span></span></code></pre></div>
+<p>This should return the vector of colours you input. You can then rebuild the documentation by running</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("pkgdown")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">document</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Finally, you can run the package tests</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">test</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>This should result in all of your tests passing. If they don’t pass, check the error message, make sure your new colour palette is written in valid HEX and make sure you have put it in the right place alphabetically in the list.</p>
+<p>If you would like to be recognised for your contribution then you can also add yourself as an official contributor. To do so open the file <code>DESCRIPTION</code> and find the lines that read like this</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Authors</span><span class="op">@</span><span class="va">R</span><span class="op">:</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/utils/person.html" class="external-link">person</a></span><span class="op">(</span><span class="st">"Hugh"</span>, <span class="st">"Warden"</span>, , <span class="st">"hugh.warden@outlook.com"</span>, role <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aut"</span>, <span class="st">"cre"</span><span class="op">)</span>, comment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>ORCID <span class="op">=</span> <span class="st">"0000-0002-4308-7316"</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre></div>
+<p>To add yourself, add another entry in the vector of authors like this</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Authors</span><span class="op">@</span><span class="va">R</span><span class="op">:</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/utils/person.html" class="external-link">person</a></span><span class="op">(</span><span class="st">"Hugh"</span>, <span class="st">"Warden"</span>, , <span class="st">"hugh.warden@outlook.com"</span>, role <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aut"</span>, <span class="st">"cre"</span><span class="op">)</span>, comment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>ORCID <span class="op">=</span> <span class="st">"0000-0002-4308-7316"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/utils/person.html" class="external-link">person</a></span><span class="op">(</span><span class="st">"Joe"</span>, <span class="st">"Bloggs"</span>, , <span class="st">""</span>, role <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ctb"</span><span class="op">)</span>, comment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>ORCID <span class="op">=</span> <span class="st">"1234-5678-1234-5678"</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre></div>
+<p>Notice a couple of things. Firstly, this is a vector, so to add a new entry you have to put a comma after the previous entry (this is easily forgotten). Secondly, you do not have to supply an email address as people will not be contacting you about package maintenance. Thirdly, the role has been changed from <code>role = c("aut", "cre")</code> to <code>role = c("ctb")</code>, this means you will be recognised as a <strong>c</strong>on<strong>t</strong>ri<strong>b</strong>utor to the package (not an <strong>aut</strong>hor or a <strong>cre</strong>ator). Finally, you don’t have to add an ORCID ID if you don’t have one, this can be left blank.</p>
+<p>If you are reading this, thank you for using and contributing to <code>AcademicThemes</code>.</p>
+</div>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
