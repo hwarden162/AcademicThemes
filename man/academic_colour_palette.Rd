@@ -24,5 +24,5 @@ Return either a specific colour palette or all colour palettes offered by
 }
 \examples{
 # Get the colour palette used by the UKRI
-academic_colour_palette("ukri")
+academic_colour_palette("ukri_mrc")
 }

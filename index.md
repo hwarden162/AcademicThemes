@@ -54,7 +54,7 @@ library(scales)
 show_col(c("#0e2e5a", "#b62641"))
 ```
 
-![](index_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 HEX codes are stored as a string starting with a hashtag (`#`) and
 followed by six characters that are either numbers 0-9 or letters A-F.

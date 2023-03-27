@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' # Get the colour palette used by the UKRI
-#' academic_colour_palette("ukri")
+#' academic_colour_palette("ukri_mrc")
 academic_colour_palette <- function(palette = NA, n = NA) {
   # Generate the colour palettes
   # ================================================================
@@ -29,11 +29,24 @@ academic_colour_palette <- function(palette = NA, n = NA) {
   # ================================================================
   # ================================================================
   palettes <- list(
-    cgem_igc = c("#0e2e5a", "#b62641"),
-    cruk = c("#2e0188", "#00b6ea", "#ee0286"),
-    eastbio = c("#284e96", "#386c4d", "#e07e38", "#bb2d4a"),
-    ukri = c("#2D2E5F", "#3A88A9", "#00BAD2"),
-    ukri_purple = c("#2D2E5F", "#874598", "#d263e5")
+    ahrc = c("#192B65", "#707FB1", "#9BA957", "#F3AB3E"),
+    bbsrc = c("#293C91", "#C43089", "#E5B440"),
+    cgem_igc = c("#0E2E5A", "#B62641"),
+    cruk = c("#2E0188", "#00B6EA", "#EE0286"),
+    eastbio = c("#284E96", "#386C4D", "#E07E38", "#BB2D4A"),
+    epsrc = c("#711D4B", "#459B8D"),
+    nerc = c("#5A5419", "#B2BB44"),
+    res_eng = c("#50515F", "#797F5C", "#B1BB50"),
+    roslin_edi = c("#BA4B91", "#6ABBEE", "#7EB966", "#C9773D"),
+    ukri_ahrc = c("#2D2E5F", "#E38D33", "#F1BB44"),
+    ukri_bbsrc = c("#2D2E5F", "#874598", "#D263E5"),
+    ukri_epsrc = c("#2D2E5F", "#46958A", "#68CCAD"),
+    ukri_esrc = c("#2D2E5F", "#BB4264", "#ED6560"),
+    ukri_iuk = c("#2D2E5F", "#7E2A96", "#AF3DB5"),
+    ukri_mrc = c("#2D2E5F", "#3A88A9", "#00BAD2"),
+    ukri_nerc = c("#2D2E5F", "#518346", "#7DBD5C"),
+    ukri_re = c("#2D2E5F", "#B3473A", "#EE722E"),
+    ukri_stfc = c("#2D2E5F", "#0C3283", "#2B61EF")
   )
 
   # If no colour palette is selected then return them all

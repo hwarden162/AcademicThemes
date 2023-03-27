@@ -4,7 +4,13 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+    echo = TRUE,
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
+  )
 ```
 
 `AcademicThemes` is a package that provides functionality to allow users to easily colour plots with the colour palettes of various academic institutions. Here are two examples of plots that have been recoloured using colours from the UKRI logo and the Cancer Research UK logo.

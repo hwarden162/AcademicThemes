@@ -14,6 +14,15 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Installation
+
+You can install the development version of `AcademicThemes` from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("hwarden162/AcademicThemes")
+```
+
 ## Accessing Colour Palettes
 
 `AcademicThemes` is a package for recolouring `ggplot2` plots to use colours from different academic institutions. These palettes are accessed through the `academic_colour_palette()` function. If no arguments are specified then a list of all the colour palettes are returned.
