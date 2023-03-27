@@ -38,6 +38,7 @@ academic_colour_palette <- function(palette = NA, n = NA) {
     nerc =           c("#5A5419", "#B2BB44"),
     res_eng =        c("#50515F", "#797F5C", "#B1BB50"),
     roslin_edi =     c("#BA4B91", "#6ABBEE", "#7EB966", "#C9773D"),
+    tu_dort =        c("#87888A", "#7DB831"),
     ukri_ahrc =      c("#2D2E5F", "#E38D33", "#F1BB44"),
     ukri_bbsrc =     c("#2D2E5F", "#874598", "#D263E5"),
     ukri_epsrc =     c("#2D2E5F", "#46958A", "#68CCAD"),
