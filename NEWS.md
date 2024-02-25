@@ -7,3 +7,8 @@
 * Added README.
 * Built `pkgdown` site.
 * Added a `NEWS.md` file to track changes to the package.
+
+# AcademicThemes 0.0.2
+
+* Added new colour themes
+* Updated the tests

@@ -1,6 +1,6 @@
 Package: AcademicThemes
 Title: Colour Plots with Palettes from Academic Institutions
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     c(
       person("Hugh", "Warden", , "hugh.warden@outlook.com", role = c("aut", "cre"),
