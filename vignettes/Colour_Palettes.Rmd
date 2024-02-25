@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+Here are the colour palettes supplied by `AcademicThemes`. The palettes listed here include ones that might not yet be on CRAN. To gain access to all palettes either wait from CRAN to be updated or follow the instructions at the top of the Get Started page to install the developement version.
+
 ```{r setup, echo = FALSE, message = FALSE}
 library(AcademicThemes)
 
