@@ -16,7 +16,13 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install the development version of `AcademicThemes` from [GitHub](https://github.com/) with:
+You can install `AcademicThemes` from CRAN with:
+
+``` r
+install.packages("AcademicThemes")
+```
+
+You can also install the development version of `AcademicThemes` from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")

@@ -59,7 +59,8 @@ academic_colour_palette <- function(palette = NA, n = NA) {
     uni_of_sheff =   c("#242353", "#448CCC", "#F3E65E"),
     uni_of_soton =   c("#131F56", "#822A18", "#D3B83F"),
     uni_of_st_andr = c("#205396", "#DA4232", "#F6ED53"),
-    uni_of_stirl =   c("#000000", "#2C673D")
+    uni_of_stirl =   c("#000000", "#2C673D"),
+    x_net_bio =      c("#3E81A3", "#DB8251")
   )
 
   # If no colour palette is selected then return them all
